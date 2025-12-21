@@ -7,6 +7,7 @@ const Context = ({ children }) => {
   const [productData, setProductData] = useState([]);
   const [categorySelected, setCategorySelected] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [addedProducts, setAddedProducts] = useState([]);
 
   // fetch products from API
   const getProducts = () => {
@@ -55,6 +56,8 @@ const Context = ({ children }) => {
     searchQueryProducts,
     searchQuery,
     setSearchQuery,
+    addedProducts,
+    setAddedProducts,
   };
 
   return (

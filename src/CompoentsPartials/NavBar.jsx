@@ -7,9 +7,9 @@ import { ProductContext } from "../Context/Context";
 
 const NavBar = () => {
 
-const {searchQuery, setSearchQuery} =  useContext(ProductContext);
+const {searchQuery, setSearchQuery, addedProducts} =  useContext(ProductContext);
 
-console.log("search:",searchQuery);
+// console.log("search:",searchQuery);
   return (
     <div className="w-full h-14 flex items-center justify-between px-20">
       <h1 className="text-3xl font-semibold">OneStore.</h1>
@@ -48,7 +48,7 @@ console.log("search:",searchQuery);
           
         <GiShoppingBag />
 
-        <p>0</p>
+        <p className="">{addedProducts.length}</p>
        
         </Link>
       </div>
