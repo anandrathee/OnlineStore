@@ -3,7 +3,7 @@ import { ProductContext } from "../Context/Context";
 
 const CategoryLIst = () => {
   const { categorySelected, setCategorySelected } = useContext(ProductContext);
-  //  console.log("cat:",categorySelected);
+   console.log("cat:",categorySelected);
 
   const handleCategoryChange = (e) => {
     // console.log(e.target.value);

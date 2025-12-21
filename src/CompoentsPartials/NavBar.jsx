@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { GiShoppingBag } from "react-icons/gi";
+import { ProductContext } from "../Context/Context";
 
 
 const NavBar = () => {
+
+const {searchQuery, setSearchQuery} =  useContext(ProductContext);
+
+console.log("search:",searchQuery);
   return (
     <div className="w-full h-14 flex items-center justify-between px-20">
       <h1 className="text-3xl font-semibold">OneStore.</h1>
@@ -27,9 +32,12 @@ const NavBar = () => {
        <div className="search flex w-40  border-b items-center justify-center gap-2 h-10 ">
          <FiSearch className="text-xl text-zinc-500" />
         <input
+        onChange={(e)=> setSearchQuery(e.target.value)}
           className=" w-full h-full outline-none bg-transparent"
           type="search"
           placeholder="Search..."
+          
+          
         />
        </div>
 
