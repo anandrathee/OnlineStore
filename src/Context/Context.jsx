@@ -9,7 +9,8 @@ const Context = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [addedProducts, setAddedProducts] = useState([]);
 
-  // fetch products from API
+
+  // get products from API
   const getProducts = () => {
     axios
       .get("/products")
@@ -45,6 +46,7 @@ const Context = ({ children }) => {
       item.title.toLowerCase().includes(searchQuery.toLowerCase())
   )
   },[filteredProducts, searchQuery]);
+
 
 // value object for context
   const value = {

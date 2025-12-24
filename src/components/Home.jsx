@@ -4,7 +4,7 @@ import { ProductContext } from "../Context/Context";
 import CategoryLIst from "../CompoentsPartials/CategoryLIst";
 
 const Home = () => {
-  const { filteredProducts, searchQueryProducts, setProductData, setAddedProducts } =
+  const { filteredProducts, searchQueryProducts, setProductData, setAddedProducts, addedProducts } =
     useContext(ProductContext);
 
     // handle button click to add/remove from cart
@@ -19,6 +19,7 @@ const Home = () => {
             setAddedProducts((prevAdded)=> prevAdded.filter((product) => product.id !== itemId));
           }
           return updatedProduct;
+          
         } else {
           return item;
         }
@@ -26,11 +27,13 @@ const Home = () => {
     );
   };
 
+  
+
   return (
     <div className="w-full px-32 h-auto flex flex-col mt-10">
       <CategoryLIst />
       <div className="flex flex-wrap gap-5 items-center justify-center mt-5">
-        {searchQueryProducts.length === ""
+        {searchQueryProducts.length === 0
           ? filteredProducts.map((item, index) => (
               <Card
                 key={item.id}
