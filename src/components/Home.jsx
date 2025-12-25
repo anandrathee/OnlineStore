@@ -4,7 +4,7 @@ import { ProductContext } from "../Context/Context";
 import CategoryLIst from "../CompoentsPartials/CategoryLIst";
 
 const Home = () => {
-  const { filteredProducts, searchQueryProducts, setProductData, setAddedProducts, addedProducts } =
+  const { filteredProducts, searchQueryProducts, setProductData, setAddedProducts } =
     useContext(ProductContext);
 
     // handle button click to add/remove from cart
