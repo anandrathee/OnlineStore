@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Card = ({values, index, handleBtnClick}) => {
   const {image, id, title, price, rating, description, category, isAdded} = values
@@ -7,7 +8,7 @@ const Card = ({values, index, handleBtnClick}) => {
       <div className="img w-full h-52 mb-4 rounded-lg overflow-hidden">
         <img className='w-full h-full object-contain' src={image} alt={title} />
       </div>
-      <div className="details h-40 flex flex-col flex-1 justify-between gap-2">
+      <Link to={`/products/${category}/${title}`}  className="details h-40 flex flex-col flex-1 justify-between gap-2">
         <h2 className='line-clamp-1 text-lg font-semibold text-gray-900 leading-tight'>{title}</h2>
         <p className='text-sm text-gray-500 capitalize'>{category}</p>
         <p className='text-xl font-bold text-gray-900'>${price}</p>
@@ -19,7 +20,7 @@ const Card = ({values, index, handleBtnClick}) => {
         }`}>
           {isAdded ? 'Added ✓' : 'Add to Cart'}
         </button>
-      </div>
+      </Link>
     </div>
   )
 }
